@@ -42,7 +42,7 @@ img {
 /* ----------------------SIDEBAR---------------------- */
 #sidebar {
   grid-area: sidebar;
-  display: grid;
+  /* display: grid; */
   background-color: var(--drawer-color);
   width: 5rem;
   position: fixed;
@@ -58,7 +58,7 @@ img {
   margin-left: 5%;
 }
 #sidebar:hover > .menuItem > h1 {
-  display: inline;
+  display: flex;
 }
 
 #sidebar:hover ~ #header,
@@ -109,11 +109,12 @@ img {
 /* ----------------------HEADER----------------------- */
 #header {
   grid-area: header;
-  display: grid;
   transition: var(--transition-notSidebar);
   background-color: var(--nav-bg-1);
   padding: 1.5rem 3rem;
   border-bottom: 2px solid black;
+  position: sticky;
+  top: 0;
 }
 
 .topHeader {
@@ -159,40 +160,245 @@ img {
   height: 40px;
   width: 40px;
 }
+
+.bottomHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.profile {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.profile .avatar {
+  width: 75px;
+  height: 75px;
+}
+
+.greeting {
+  font-weight: 800;
+  margin-bottom: 0.4rem;
+}
+
+.profile .name {
+  font-size: 1.6rem;
+  font-weight: 800;
+}
+
+.buttons {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 2rem;
+}
+
+.btn {
+  appearance: button;
+  backface-visibility: hidden;
+  background-color: var(--drawer-color);
+  border-radius: 6px;
+  border-width: 0;
+  box-shadow: rgba(50, 50, 93, 0.1) 0 0 0 1px inset,
+    rgba(50, 50, 93, 0.1) 0 2px 5px 0, rgba(0, 0, 0, 0.07) 0 1px 1px 0;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  font-family: -apple-system, system-ui, "Segoe UI", Roboto, "Helvetica Neue",
+    Ubuntu, sans-serif;
+  font-size: 100%;
+  height: 44px;
+  line-height: 1.15;
+  margin: 12px 0 0;
+  outline: none;
+  overflow: hidden;
+  padding: 0 25px;
+  position: relative;
+  text-align: center;
+  text-transform: none;
+  transform: translateZ(0);
+  transition: all 0.2s, box-shadow 0.08s ease-in;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  width: 100%;
+}
+
+.btn:disabled {
+  cursor: default;
+}
+
+.btn:focus {
+  box-shadow: rgba(50, 50, 93, 0.1) 0 0 0 1px inset,
+    rgba(50, 50, 93, 0.2) 0 6px 15px 0, rgba(0, 0, 0, 0.1) 0 2px 2px 0,
+    rgba(50, 151, 211, 0.3) 0 0 0 4px;
+}
 /*---------------------- MAIN------------------------ */
 #main {
   grid-area: main;
   display: grid;
-  grid-template-columns: 3fr 3fr 2fr;
-  grid-template-rows: 1fr 1fr;
+  grid-template-columns: 1fr auto;
+  grid-template-rows: min-content 1 fr;
+  gap: 2rem;
   grid-template-areas:
-    "projects projects announcements"
-    "projects projects trending";
+    "projects announcements"
+    "projects trending";
   background-color: gray;
   transition: var(--transition-notSidebar);
+  padding: 2rem;
+  overflow: auto;
+  height: 100%;
+}
+
+#main h3 {
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-bottom: 0.8rem;
 }
 /* PROJECTS */
 .projects {
-  display: inline-grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr 1fr 1fr;
-  grid-template-areas:
-    "cards cards"
-    "cards cards"
-    "cards cards";
   grid-area: projects;
 }
-.cards {
+
+.projects .cards {
   display: grid;
-  grid-area: cards;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-rows: 250px;
+  gap: 2rem;
+  padding-bottom: 2rem;
 }
-/* ANNNOUNCEMENTS */
+
+.projects .card {
+  background-color: var(--nav-color-2);
+  border-left: 10px solid rgba(255, 166, 0, 0.689);
+  display: flex;
+  flex-direction: column;
+}
+
+.projects .cardTitle {
+  font-size: 1.4rem;
+  margin-bottom: 0.2rem;
+  font-weight: 500;
+}
+
+.projects .cardText {
+  display: -webkit-box;
+  -webkit-line-clamp: 5;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.projects .icons {
+  margin-top: auto;
+  display: flex;
+  align-self: flex-end;
+  justify-content: flex-end;
+  gap: 1.5rem;
+  align-items: center;
+  padding-bottom: 5px;
+  padding-right: 5px;
+}
+
+.card {
+  background-color: rgba(45, 187, 187, 0.459);
+  padding: 2rem;
+  border-radius: 0.6rem;
+  box-shadow: 0 10px 15px -3px rgb(0, 0, 0 / 0.1), 0 4px 6px -4;
+  max-width: 30vw;
+}
+
 .announcements {
-  display: grid;
   grid-area: announcements;
 }
-/* TRENDING */
+
+.announcement {
+  width: 25ch;
+  padding: 1rem 0;
+}
+
+.announcement:first-child {
+  padding-top: 0;
+}
+
+.announcement:last-child {
+  padding-bottom: 0;
+}
+
+.announcement h5 {
+  font-size: 0.9rem;
+  margin-bottom: 0.2rem;
+}
+
+.announcement p {
+  font-size: 0.8rem;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.announcement + .announcement {
+  border-top: rgba(128, 128, 128, 0.618) 1px solid;
+}
+
 .trending {
-  display: grid;
   grid-area: trending;
+}
+
+.trending .card {
+  padding: 1.5rem;
+}
+
+.trend {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  cursor: pointer;
+}
+
+.trend + .trend {
+  margin-top: 1.5rem;
+}
+
+.trend .account {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  font-size: 0.9rem;
+}
+
+.trend .username {
+  font-weight: 500;
+  margin-bottom: 0.15rem;
+}
+
+.trend1 .avatar2 {
+  background: var(--avatar2) center center / cover no-repeat;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+}
+
+.trend2 .avatar {
+  background: var(--avatar) center center / cover no-repeat;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+}
+
+.trend3 .avatar3 {
+  background: var(--avatar3) center center / cover no-repeat;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+}
+
+.trend4 .avatar4 {
+  background: var(--avatar4) center center / cover no-repeat;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
 }
