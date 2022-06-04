@@ -17,25 +17,29 @@
   --avatar3: url("https://github.com/luke.png");
   --avatar4: url("https://github.com/paul.png");
   --content-gray: rgb(235, 235, 235);
-  --transition-notDrawer: margin-left 0.4s ease-in;
+  --transition-notSidebar: margin-left 0.4s ease-in;
   --transition-sidebar: width 0.4s ease-in;
 }
+
 body {
   margin: 0;
+}
+
+img {
+  cursor: pointer;
 }
 
 .container {
   width: 100vw;
   height: 100vh;
   display: grid;
-  background-color: bisque;
   grid-template-columns: 5rem 1fr 1fr 1fr;
   grid-template-rows: 1fr 4fr;
   grid-template-areas:
     "sidebar header header header"
     "sidebar main main main";
 }
-
+/* ----------------------SIDEBAR---------------------- */
 #sidebar {
   grid-area: sidebar;
   display: grid;
@@ -49,6 +53,18 @@ body {
 #sidebar:hover {
   width: var(--sidebar-width);
 }
+.menuItem > h1 {
+  display: none;
+  margin-left: 5%;
+}
+#sidebar:hover > .menuItem > h1 {
+  display: inline;
+}
+
+#sidebar:hover ~ #header,
+#sidebar:hover ~ #main {
+  margin-left: calc(var(--sidebar-width) - 5rem);
+}
 
 .menuItem {
   color: var(--text-secondary);
@@ -60,12 +76,90 @@ body {
 .menuItem > * {
   cursor: pointer;
 }
+
+#sidebar > div:not(:first-child) > * {
+  padding: 1vw 0.1vw 0.1vw 0vw;
+  font-size: calc(20px + 0.2vw);
+  padding-left: 15px;
+}
+
+#sidebar > div:not(:first-child) > img {
+  width: calc(20px + 0.5vw);
+  height: calc(20px + 0.5vh);
+}
+
+#sidebar > div:nth-child(8) {
+  padding-top: 50px;
+}
+
+.dashboard {
+  font-size: 1.2rem;
+  color: indigo;
+}
+
+.dashboard img {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: calc(40px + 0.7vw);
+  height: calc(40px + 0.7vw);
+  padding-left: 10px;
+  padding-top: 10;
+}
+/* ----------------------HEADER----------------------- */
 #header {
   grid-area: header;
   display: grid;
-  background-color: yellow;
+  transition: var(--transition-notSidebar);
+  background-color: var(--nav-bg-1);
+  padding: 1.5rem 3rem;
+  border-bottom: 2px solid black;
 }
-/* MAIN------------------------ */
+
+.topHeader {
+  display: grid;
+  grid-template-columns: 1fr max-content;
+  margin-bottom: 2.5rem;
+}
+
+.search {
+  display: flex;
+  align-items: center;
+  margin-right: auto;
+  width: 100%;
+}
+
+.search > input {
+  display: inline-block;
+  border: 0;
+  background-color: var(--nav-color-1);
+  padding: 0.75rem 2rem;
+  outline-color: var(--blue-1);
+  margin-left: 1.25rem;
+  border-radius: 5px;
+  width: min(80%, 650px);
+  margin-right: 20px;
+}
+
+#header .account {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  font-size: 1.2rem;
+  font-weight: 800;
+}
+
+.avatar {
+  background: var(--avatar) center center / cover no-repeat;
+  border-radius: 50%;
+}
+
+.account .avatar {
+  margin: 0 1rem 0 2.5rem;
+  height: 40px;
+  width: 40px;
+}
+/*---------------------- MAIN------------------------ */
 #main {
   grid-area: main;
   display: grid;
@@ -75,6 +169,7 @@ body {
     "projects projects announcements"
     "projects projects trending";
   background-color: gray;
+  transition: var(--transition-notSidebar);
 }
 /* PROJECTS */
 .projects {
