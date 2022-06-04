@@ -9,61 +9,247 @@
   </head>
   <body>
     <div class="container">
-      <div class="box" id="sidebar">
-        <div class="dashboard">
-          <img src="" alt="" />
+      <!-- Sidebar -->
+      <div id="sidebar">
+        <div class="menuItem dashboard">
+          <img src="assets/view-dashboard.svg" alt="" />
           <h1>Dashboard</h1>
         </div>
         <div class="menuItem">
-          <img src="" alt="" />
+          <img src="assets/home.svg" alt="" />
           <h1>Home</h1>
         </div>
         <div class="menuItem">
-          <img src="" alt="" />
+          <img src="assets/card-account-details-outline.svg" alt="" />
           <h1>Profile</h1>
         </div>
         <div class="menuItem">
-          <img src="" alt="" />
+          <img src="assets/message-settings-outline.svg" alt="" />
           <h1>Messages</h1>
         </div>
         <div class="menuItem">
-          <img src="" alt="" />
+          <img src="assets/clock-time-nine-outline.svg" alt="" />
           <h1>History</h1>
         </div>
         <div class="menuItem">
-          <img src="" alt="" />
+          <img src="assets/note-multiple.svg" alt="" />
           <h1>Tasks</h1>
         </div>
         <div class="menuItem">
-          <img src="" alt="" />
+          <img src="assets/account-group.svg" alt="" />
           <h1>Communities</h1>
         </div>
         <div class="menuItem">
-          <img src="" alt="" />
+          <img src="assets/cog.svg" alt="" />
           <h1>Settings</h1>
         </div>
         <div class="menuItem">
-          <img src="" alt="" />
+          <img src="assets/message-question.svg" alt="" />
           <h1>Support</h1>
         </div>
         <div class="menuItem">
-          <img src="" alt="" />
+          <img src="assets/shield-check.svg" alt="" />
           <h1>Privacy</h1>
         </div>
       </div>
-      <div class="box" id="header">
-        <div class="searchbar"></div>
-        <div class="newButton">
-          <button>New</button>
+
+      <!-- Header -->
+      <div id="header">
+        <!-- Top Header -->
+        <div class="topHeader">
+          <!-- Search icon and search bar -->
+          <div class="search">
+            <div class="menuItem">
+              <img src="assets/magnify.svg" alt="" />
+            </div>
+            <input type="text" name="search" />
+          </div>
+          <div class="account">
+            <div class="menuItem">
+              <img src="assets/bell-ring.svg" alt="" />
+            </div>
+            <!-- Avatar -->
+            <div class="avatar"></div>
+            <!-- Username -->
+            <p class="name">Lukes Admin Page</p>
+          </div>
         </div>
-        <div class="uploadButton">
-          <button>Upload</button>
-        </div>
-        <div class="shareButton">
-          <button>Share</button>
+        <!-- Bottom Header -->
+        <div class="bottomHeader">
+          <!-- Profile Details -->
+          <div class="profile">
+            <div class="avatar"></div>
+            <div class="profileName">
+              <p class="greeting">Hi There</p>
+              <p class="name">
+                Luke Scrivens <span class="username">(@MILKPlease)</span>
+              </p>
+            </div>
+          </div>
+          <!-- Buttons -->
+          <div class="buttons">
+            <button class="btn">New</button>
+            <button class="btn">Upload</button>
+            <button class="btn">Share</button>
+          </div>
         </div>
       </div>
-      <div class="box" id="main">Main</div>
+
+      <!-- Main -->
+      <div id="main">
+        <!-- Projects -->
+        <div class="projects">
+          <h3>Your Projects</h3>
+          <!-- All Cards -->
+          <div class="cards">
+            <div class="card">
+              <h5 class="cardTitle">Super Cool Project</h5>
+              <p class="cardText">
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                Commodi, at natus! Debitis deserunt repellat dolores repudiandae
+                repellendus aliquid mod.
+              </p>
+              <div class="icons">
+                <img src="assets/star-plus-outline.svg" alt="" />
+                <img src="assets/eye-plus-outline.svg" alt="" />
+                <img src="assets/source-branch.svg" alt="" />
+              </div>
+            </div>
+            <div class="card">
+              <h5 class="cardTitle">Less Cool Project</h5>
+              <p class="cardText">
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                Commodi, at natus! Debitis deserunt repellat dolores repudiandae
+                repellendus aliquid mod.
+              </p>
+              <div class="icons">
+                <img src="assets/star-plus-outline.svg" alt="" />
+                <img src="assets/eye-plus-outline.svg" alt="" />
+                <img src="assets/source-branch.svg" alt="" />
+              </div>
+            </div>
+            <div class="card">
+              <h5 class="cardTitle">Impossible App</h5>
+              <p class="cardText">
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                Commodi, at natus! Debitis deserunt repellat dolores repudiandae
+                repellendus aliquid mod.
+              </p>
+              <div class="icons">
+                <img src="assets/star-plus-outline.svg" alt="" />
+                <img src="assets/eye-plus-outline.svg" alt="" />
+                <img src="assets/source-branch.svg" alt="" />
+              </div>
+            </div>
+            <div class="card">
+              <h5 class="cardTitle">Easy Peasy App</h5>
+              <p class="cardText">
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                Commodi, at natus! Debitis deserunt repellat dolores repudiandae
+                repellendus aliquid mod.
+              </p>
+              <div class="icons">
+                <img src="assets/star-plus-outline.svg" alt="" />
+                <img src="assets/eye-plus-outline.svg" alt="" />
+                <img src="assets/source-branch.svg" alt="" />
+              </div>
+            </div>
+            <div class="card">
+              <h5 class="cardTitle">Add Blocker</h5>
+              <p class="cardText">
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                Commodi, at natus! Debitis deserunt repellat dolores repudiandae
+                repellendus aliquid mod.
+              </p>
+              <div class="icons">
+                <img src="assets/star-plus-outline.svg" alt="" />
+                <img src="assets/eye-plus-outline.svg" alt="" />
+                <img src="assets/source-branch.svg" alt="" />
+              </div>
+            </div>
+            <div class="card">
+              <h5 class="cardTitle">Money Maker</h5>
+              <p class="cardText">
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                Commodi, at natus! Debitis deserunt repellat dolores repudiandae
+                repellendus aliquid mod.
+              </p>
+              <div class="icons">
+                <img src="assets/star-plus-outline.svg" alt="" />
+                <img src="assets/eye-plus-outline.svg" alt="" />
+                <img src="assets/source-branch.svg" alt="" />
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- List of Announcements -->
+        <div class="announcements">
+          <ul class="card">
+            <li class="announcement">
+              <h5 class="cardTitle">Site Maintenance</h5>
+              <p class="cardText">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Blanditiis dolore id nulla sit necessitatibus autem ab
+                consequatur. Inventore ducimus et dignissimos sint provident
+                repudiandae unde molestias commodi, quaerat alias. Vitae.
+              </p>
+            </li>
+            <li class="announcement">
+              <h5 class="cardTitle">Community Share Day</h5>
+              <p class="cardText">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Blanditiis dolore id nulla sit necessitatibus autem ab
+                consequatur. Inventore ducimus et dignissimos sint provident
+                repudiandae unde molestias commodi, quaerat alias. Vitae.
+              </p>
+            </li>
+            <li class="announcement">
+              <h5 class="cardTitle">Updated Privacy Policy</h5>
+              <p class="cardText">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Blanditiis dolore id nulla sit necessitatibus autem ab
+                consequatur. Inventore ducimus et dignissimos sint provident
+                repudiandae unde molestias commodi, quaerat alias. Vitae.
+              </p>
+            </li>
+          </ul>
+        </div>
+        <!-- Trending Section -->
+        <div class="trending">
+          <h3>Trending</h3>
+          <!-- List of all trending people -->
+          <ul class="card">
+            <li class="trend trend1">
+              <div class="avatar2"></div>
+              <div class="account">
+                <p class="username">@tegan</p>
+                <p class="name cardText">World Peace Builder</p>
+              </div>
+            </li>
+            <li class="trend trend2">
+              <div class="avatar"></div>
+              <div class="account">
+                <p class="username">@MILKPlease</p>
+                <p class="name cardText">Coolest Gamer Ever</p>
+              </div>
+            </li>
+            <li class="trend trend3">
+              <div class="avatar3"></div>
+              <div class="account">
+                <p class="username">@kendall</p>
+                <p class="name cardText">Life Changing App</p>
+              </div>
+            </li>
+            <li class="trend trend4">
+              <div class="avatar4"></div>
+              <div class="account">
+                <p class="username">@alex</p>
+                <p class="name cardText">No Traffic Maker</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
     </div>
   </body>
 </html>
